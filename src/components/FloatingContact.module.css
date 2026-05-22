@@ -1,0 +1,40 @@
+.wrapper {
+  position: fixed;
+  right: 18px;
+  bottom: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 1200;
+}
+
+.floatBtn {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--light-text);
+  box-shadow: var(--shadow-md);
+  text-decoration: none;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.floatBtn:active,
+.floatBtn:focus {
+  transform: translateY(2px);
+}
+
+.call {
+  background: linear-gradient(180deg, var(--primary-blue), var(--secondary-blue));
+}
+
+.wa {
+  background: linear-gradient(180deg, #25D366, #1DA851);
+}
+
+@media (max-width: 480px) {
+  .wrapper { right: 12px; bottom: 18px; }
+  .floatBtn { width: 52px; height: 52px; }
+}
