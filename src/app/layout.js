@@ -1,4 +1,5 @@
 import { Inter } from "next/font/google";
+import { Siren } from "lucide-react";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -13,6 +14,9 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={inter.className}>
         <a href="#main-content" className="skipLink">Skip to content</a>
+        <div className="emergency-top-bar">
+          <Siren size={18} /> Emergency Plumbing? Call Now: <a href="tel:+916295404001">+91 6295 404001</a>
+        </div>
         <main id="main-content" role="main">
           {children}
         </main>

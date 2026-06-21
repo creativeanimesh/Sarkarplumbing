@@ -1,0 +1,125 @@
+.contactSection {
+  padding: 6rem 0;
+  background-color: var(--muted-bg);
+}
+
+.contactContainer {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 3rem;
+  background: var(--card-bg);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  padding: 0; /* padding applied to inner elements */
+}
+
+.formWrap {
+  padding: 4rem 3rem;
+  background-color: var(--card-bg);
+}
+
+.contactTitle {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: var(--primary-blue);
+  margin-bottom: 0.5rem;
+}
+
+.contactSubtitle {
+  color: #64748b;
+  margin-bottom: 2rem;
+}
+
+.contactForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.inputGroup input,
+.inputGroup select,
+.inputGroup textarea {
+  width: 100%;
+  padding: 1rem 1.25rem;
+  border: 1px solid #e2e8f0;
+  border-radius: var(--radius-sm);
+  background-color: #f8fafc;
+  font-family: inherit;
+  font-size: 1rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.inputGroup input:focus,
+.inputGroup select:focus,
+.inputGroup textarea:focus {
+  outline: none;
+  border-color: var(--primary-blue);
+  box-shadow: 0 0 0 3px rgba(0, 55, 165, 0.1);
+}
+
+.mapWrap {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background-color: #e2e8f0;
+}
+
+.contactInfoCards {
+  display: flex;
+  gap: 1rem;
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  right: 2rem;
+  z-index: 10;
+}
+
+.infoCard {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  padding: 1rem 1.5rem;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex: 1;
+  box-shadow: var(--shadow-md);
+}
+
+.infoIcon {
+  color: var(--primary-blue);
+  flex-shrink: 0;
+}
+
+.infoCard strong {
+  display: block;
+  font-size: 0.9rem;
+  color: #64748b;
+}
+
+.infoCard p {
+  font-weight: 700;
+  color: var(--dark-text);
+  margin: 0;
+}
+
+.mapContainer {
+  flex-grow: 1;
+  min-height: 400px;
+}
+
+@media (max-width: 900px) {
+  .contactContainer {
+    grid-template-columns: 1fr;
+  }
+  .formWrap {
+    padding: 3rem 2rem;
+  }
+  .contactInfoCards {
+    flex-direction: column;
+    position: static;
+    padding: 2rem;
+    background: var(--card-bg);
+  }
+}

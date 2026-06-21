@@ -152,3 +152,29 @@ h1, h2, h3, h4, h5, h6 {
 .text-center { text-align: center; }
 .py-4 { padding-top: 4rem; padding-bottom: 4rem; }
 .mb-2 { margin-bottom: 2rem; }
+
+/* Emergency Top Bar */
+.emergency-top-bar {
+  background-color: var(--accent-color);
+  color: #000;
+  text-align: center;
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  position: sticky;
+  top: 0;
+  z-index: 1001;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.emergency-top-bar a {
+  font-weight: 800;
+  text-decoration: underline;
+}
+
+.emergency-top-bar svg {
+  margin-right: 4px;
+}

@@ -1,0 +1,117 @@
+.expertSection {
+  padding: 6rem 0;
+  background-color: var(--light-bg);
+}
+
+.expertContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.expertImageWrap {
+  position: relative;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.expertImage {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  aspect-ratio: 4/5;
+  background-color: var(--muted-bg);
+}
+
+.experienceBadge {
+  position: absolute;
+  bottom: -2rem;
+  right: -2rem;
+  background-color: var(--accent-color);
+  color: var(--dark-text);
+  padding: 1.5rem;
+  border-radius: 50%;
+  width: 140px;
+  height: 140px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-shadow: var(--shadow-md);
+  border: 6px solid white;
+}
+
+.experienceBadge strong {
+  font-size: 2.5rem;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.experienceBadge span {
+  font-size: 0.85rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-top: 0.25rem;
+}
+
+.expertContent {
+  padding-right: 2rem;
+}
+
+.expertTitle {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--primary-blue);
+  margin-bottom: 0.5rem;
+}
+
+.expertRole {
+  font-size: 1.25rem;
+  color: var(--brand-green);
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+.expertBio {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #475569;
+  margin-bottom: 2rem;
+}
+
+.skillsHeading {
+  font-size: 1.1rem;
+  color: var(--dark-text);
+  margin-bottom: 1rem;
+}
+
+.skillsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.skillItem {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-weight: 600;
+  color: var(--dark-text);
+}
+
+.checkIcon {
+  color: var(--primary-blue);
+  flex-shrink: 0;
+}
+
+@media (max-width: 900px) {
+  .expertContainer {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .expertImageWrap {
+    margin-bottom: 3rem;
+  }
+}

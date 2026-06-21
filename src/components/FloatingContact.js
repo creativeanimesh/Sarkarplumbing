@@ -3,7 +3,8 @@ import styles from './FloatingContact.module.css';
 export default function FloatingContact() {
   const phoneRaw = '+916295404001';
   const telHref = `tel:${phoneRaw}`;
-  const waHref = `https://wa.me/${phoneRaw.replace('+','')}`;
+  const message = encodeURIComponent("Hello Sarkar Plumbing Works, I need plumbing service.");
+  const waHref = `https://wa.me/${phoneRaw.replace('+','')}?text=${message}`;
 
   return (
     <div className={styles.wrapper} aria-hidden="false">

@@ -2,6 +2,10 @@ import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FloatingContact from "@/components/FloatingContact";
+import BrandMarquee from "@/components/BrandMarquee";
+import MeetExpert from "@/components/MeetExpert";
+import GoogleReviews from "@/components/GoogleReviews";
+import ContactMap from "@/components/ContactMap";
 import { 
   Bath, 
   Droplet, 
@@ -18,7 +22,8 @@ import {
   Phone,
   Star,
   Calendar,
-  User
+  User,
+  MapPin
 } from "lucide-react";
 import styles from "./page.module.css";
 import GalleryLightbox from '@/components/GalleryLightbox';
@@ -61,16 +66,12 @@ export default function Home() {
   ];
 
   const testimonials = [
-    { name: 'Palash Mandal', text: 'Quick response service' },
-    { name: 'Sujit Thakur', text: 'Good service.' },
-    { name: 'Rohit Ram', text: 'Nice skills he has .. good job 👍👏' },
-    { name: 'Sayani Mitra', text: 'Excellent service' },
-    { name: 'SWARUP PRAMANIK', text: 'Very clean work, and polite behaviour. I am satisfied' },
-    { name: 'Aditya Das', text: 'Nice' },
-    { name: 'Bittu Ram', text: 'Khub Bhalo and Kore Chalet Hater and Khubi Valo' },
-    { name: 'M K Enterprise', text: 'KHAJA BABA ENTERPRISE' },
-    { name: 'Sahil', text: '—' },
-    { name: 'Md Shahel Akhtar', text: '—' }
+    { name: 'Palash Mandal', location: 'Malda', text: 'Quick response service. Very professional.' },
+    { name: 'Sujit Thakur', location: 'English Bazar', text: 'Good service and fair pricing.' },
+    { name: 'Rohit Ram', location: 'Gazole', text: 'Nice skills he has .. good job 👍👏' },
+    { name: 'Sayani Mitra', location: 'Old Malda', text: 'Excellent service for bathroom repair.' },
+    { name: 'SWARUP PRAMANIK', location: 'Kaliachak', text: 'Very clean work, and polite behaviour. I am satisfied' },
+    { name: 'Aditya Das', location: 'Malda', text: 'Nice work on time.' },
   ];
 
   return (
@@ -83,22 +84,25 @@ export default function Home() {
           <div className={styles.heroInner}>
             <div className={styles.heroText}>
               <div className={styles.badge}>
-                <span className={styles.hash}>#</span> NO1 PLUMBING SERVICES
+                <span className={styles.hash}>#</span> NO1 PLUMBING SERVICES IN MALDA
               </div>
               <h1 className={`${styles.heroTitle} animate-fade-in`}>
-                FAST, AFFORDABLE & ENERGY EFFICIENT PLUMBING SERVICES
+                PROFESSIONAL PLUMBING SERVICES IN MALDA – RESIDENTIAL & COMMERCIAL SOLUTIONS
               </h1>
               <p className={`${styles.heroSubtitle} animate-fade-in`}>
-                We're your local plumbing experts dedicated to keeping your family comfortable through every season. With same day service, honest pricing, and guaranteed results, you can trust us to handle all your needs.
+                We're your local plumbing experts serving <strong>Malda, English Bazar, Gazole, Old Malda, Kaliachak</strong> and nearby areas. Dedicated to keeping your family comfortable through every season with fast, honest, and guaranteed results.
               </p>
               <div className={`${styles.heroButtons} animate-fade-in`}>
-                <a href="#contact" className="btn-primary">Request Plumbing Service</a>
+                <a href="#contact" className="btn-primary">
+                  <Phone size={18} style={{marginRight: '8px'}} /> Call Now: +91 6295 404001
+                </a>
               </div>
 
               <div className={styles.trustStrip}>
-                <div className={styles.stat}><strong>4.5K+</strong><span>Projects Done</span></div>
-                <div className={styles.stat}><strong>13K+</strong><span>Satisfied Customers</span></div>
-                <div className={styles.stat}><strong>10+</strong><span>Years of Experience</span></div>
+                <div className={styles.stat}><strong>1000+</strong><span>Happy Customers</span></div>
+                <div className={styles.stat}><strong>500+</strong><span>Projects Completed</span></div>
+                <div className={styles.stat}><strong>5+</strong><span>Years Experience</span></div>
+                <div className={styles.stat}><strong>24/7</strong><span>Emergency Support</span></div>
               </div>
             </div>
 
@@ -111,6 +115,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <BrandMarquee />
 
       {/* Services Section */}
       <section id="services" className={styles.servicesSection}>
@@ -150,8 +156,25 @@ export default function Home() {
         </div>
       </section>
 
-      {/* FAQ & Testimonials Section */}
-      <section className={styles.faqTestimonialsSection}>
+      {/* Meet The Expert Section */}
+      <MeetExpert />
+
+      {/* Gallery Section */}
+      <section className={styles.gallerySection}>
+        <div className="container">
+          <div className={styles.sectionHeader}>
+            <h2 className={styles.sectionTitle} style={{color: 'white'}}>Our Work & Transformations</h2>
+            <p className={styles.sectionSubtitle} style={{ color: 'rgba(255,255,255,0.8)' }}>A glimpse of our recently completed plumbing projects</p>
+          </div>
+          <GalleryLightbox images={galleryImages} />
+        </div>
+      </section>
+
+      {/* Google Reviews Section */}
+      <GoogleReviews />
+
+      {/* FAQ Section */}
+      <section className={styles.faqTestimonialsSection} style={{ paddingBottom: '2rem' }}>
         <div className={`container ${styles.faqContainer}`}>
           <div className={styles.faqLeft}>
             <h2 className={styles.faqTitle}>STILL HAVE QUESTIONS? WE'RE HERE TO HELP</h2>
@@ -195,7 +218,10 @@ export default function Home() {
                   <div className={styles.authorAvatar}>
                     {t.name.charAt(0)}
                   </div>
-                  <span className={styles.testimonialAuthor}>{t.name}</span>
+                  <div style={{ display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
+                    <span className={styles.testimonialAuthor}>{t.name}</span>
+                    <span style={{ fontSize: '0.85rem', color: '#64748b' }}>{t.location}</span>
+                  </div>
                   <div className={styles.quoteIcon}>"</div>
                 </div>
               </div>
@@ -204,16 +230,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Gallery Section */}
-      <section className={styles.gallerySection}>
-        <div className="container">
-          <div className={styles.sectionHeader}>
-            <h2 className={styles.sectionTitle}>Our Work</h2>
-            <p className={styles.sectionSubtitle} style={{ color: 'rgba(255,255,255,0.8)' }}>A glimpse of our recently completed projects</p>
-          </div>
-          <GalleryLightbox images={galleryImages} />
-        </div>
-      </section>
+
 
       {/* About Section */}
       <section id="about" className={styles.aboutSection}>
@@ -326,6 +343,7 @@ export default function Home() {
         </div>
       </section>
 
+      <ContactMap />
       <FloatingContact />
       <Footer />
     </div>
